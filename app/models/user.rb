@@ -10,13 +10,14 @@ class User < ActiveRecord::Base
   validates :email, :username, uniqueness: true
   validates :email, email_format: { message: "doesn't look like an email address" }
   validates :username, length: { in: 3.. 40 }
-  validates :username, format: { with: /\A[a-zA-Z0-9-_\.]\z/,
-    message: "only allows letters" }
+  validates :username, format: { with: /\A[a-zA-Z0-9_]+\z/, message: "only allows letters" }
+
   attr_accessor :password
 
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
 
+  before_validation :downcase
   before_save :encrypt_password
 
   def encrypt_password
@@ -41,6 +42,12 @@ class User < ActiveRecord::Base
       user
     else
       nil
+    end
+  end
+
+  def downcase
+    if username.present?
+      self.username = username.downcase!
     end
   end
 end

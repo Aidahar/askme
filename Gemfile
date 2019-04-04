@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-
-gem 'rails', '4.2.11.1'
+gem 'validates_email_format_of'
+gem 'rails', '4.2.8'
 gem 'sqlite3', '~> 1.3.13'
 gem 'jquery-rails'
 

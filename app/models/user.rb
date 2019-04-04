@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
   has_many :questions
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
-
+  validates :email, email_format: { message: "doesn't look like an email address" }
+  validates :username, length: { in: 3.. 40 }
+  validates :username, format: { with: /\A[a-zA-Z0-9-_\.]\z/,
+    message: "only allows letters" }
   attr_accessor :password
 
   validates_presence_of :password, on: :create

@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validates :email, email_format: { message: "doesn't look like an email address" }
-  validates :username, length: { in: 3.. 40 }
-  validates :username, format: { with: /\A[a-zA-Z0-9_]+\z/, message: "only allows letters" }
+  validates :username, length: { in: 2 .. 40 }
+  validates :username, format: { with: /\A[a-z0-9_]+\z/ }
 
   attr_accessor :password
 
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
 
   def downcase
     if username.present?
-      self.username = username.downcase!
+      self.username.downcase!
     end
   end
 end

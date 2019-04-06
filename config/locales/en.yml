@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    errors:
+      messages:
+        invalid_email_address: 'does not appear to be a valid e-mail address'
+        email_address_not_routable: 'is not routable'
+

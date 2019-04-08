@@ -2,6 +2,8 @@ require 'openssl'
 
 class User < ActiveRecord::Base
 
+  attr_accessor :password
+
   ITERATIONS = 20000
   DIGEST = OpenSSL::Digest::SHA256.new
 
@@ -9,10 +11,8 @@ class User < ActiveRecord::Base
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validates :email, email_format: { message: :invalid_email_address }
-  validates :username, length: { in: 2..40 }
+  validates :username, length: { in: 2 .. 40 }
   validates :username, format: { with: /\A[a-z0-9_]+\z/ }
-
-  attr_accessor :password
 
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
 
   def downcase
     if username.present?
-      self.username.downcase
+      self.username.downcase!
     end
   end
 end

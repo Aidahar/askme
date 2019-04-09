@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
 
   def index
+    @users = [
+      User.new(
+        id: 1,
+        name: "Gru",
+        username: "Mr.Gru",
+      ),
+      User.new(
+        id: 2,
+        name: "Nefario",
+        username: "Dr. Nef",
+      )
+    ]
   end
 
   def new
@@ -16,8 +28,8 @@ class UsersController < ApplicationController
     )
 
     @questions = [
-      Question.new(text: "How do you do?", created_at: Date.parse('27.03.2019')),
-      Question.new(text: "Are you pussy?", created_at: Date.parse('27.03.2019'))
+      Question.new(text: "Как дела?", created_at: Date.parse('27.03.2019')),
+      Question.new(text: "В чем смысл жизни?", created_at: Date.parse('27.03.2019'))
     ]
     
     @new_question = Question.new

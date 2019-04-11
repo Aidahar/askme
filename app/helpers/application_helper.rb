@@ -13,6 +13,10 @@ module ApplicationHelper
       number = 0
     end
 
+    if (number % 100).between?(11, 19)
+      return many
+    end
+
     ostatok = number % 10
 
     if ostatok == 1

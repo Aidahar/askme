@@ -8,7 +8,6 @@ module ApplicationHelper
   end
 
   def sklonenie(number)
-
     if number == nil || !number.is_a?(Numeric)
       number = 0
     end
@@ -30,5 +29,9 @@ module ApplicationHelper
     if (ostatok >= 5 && ostatok <= 9) || ostatok == 0
       return 'вопросов'
     end
+  end
+
+  def fa_icon(icon_class)
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
 end

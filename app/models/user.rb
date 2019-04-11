@@ -8,11 +8,12 @@ class User < ActiveRecord::Base
   DIGEST = OpenSSL::Digest::SHA256.new
 
   has_many :questions
+
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validates :email, email_format: { message: :invalid_email_address }
   validates :username, length: { in: 2 .. 40 }
-  validates :username, format: { with: /\A[a-z0-9_]+\z/ }
+  validates :username, format: { with: /\A[а-яёa-z0-9_]+\z/ }
 
   validates_presence_of :password, on: :create
   validates_confirmation_of :password

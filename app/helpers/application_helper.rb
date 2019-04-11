@@ -7,7 +7,7 @@ module ApplicationHelper
     end
   end
 
-  def sklonenie(number, single, few, many)
+  def sklonenie(number)
 
     if number == nil || !number.is_a?(Numeric)
       number = 0
@@ -20,15 +20,15 @@ module ApplicationHelper
     ostatok = number % 10
 
     if ostatok == 1
-      return single
+      return 'вопрос'
     end
 
     if ostatok >= 2 && ostatok <= 4
-      return few
+      return 'вопроса'
     end
 
     if (ostatok >= 5 && ostatok <= 9) || ostatok == 0
-      return many
+      return 'вопросов'
     end
   end
 end

@@ -4,9 +4,10 @@ gem 'validates_email_format_of'
 gem 'rails', '4.2.8'
 gem 'jquery-rails'
 gem 'uglifier'
+gem 'rails_12factor'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~>0.21'
 end
 
 group :development, :test do

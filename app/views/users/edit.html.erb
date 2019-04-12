@@ -29,6 +29,11 @@
           <%= f.text_field :avatar_url, class: 'form-text-field' %>
         </div>
 
+        <div class="form-field">
+          <%= f.label 'Выбрать цвет фона', class: 'form-label' %>
+          <%= f.color_field :bg_color %>
+        </div>
+
         <div class="buffer-top-large buffer-bottom">
           Если не хотите менять пароль - оставьте эти поля пустыми!
         </div>
@@ -44,7 +49,7 @@
         </div>
 
         <div class="form-action">
-          <%= f.submit 'Зарегистрироваться', class: 'button button-small button-dark' %>
+          <%= f.submit 'Обновить информацию', class: 'button button-small button-dark' %>
         </div>
 
         <div class="form-action">

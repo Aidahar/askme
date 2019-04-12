@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validates :email, email_format: { message: :invalid_email_address }
-  validates :username, length: { in: 2 .. 40 }
-  validates :username, format: { with: /\A[а-яёa-z0-9_]+\z/ }
-
+  validates :username, length: { in: 2 .. 40 }, format: { with: /\A[а-яёa-z0-9_]+\z/ }
+  validates :bg_color, format: { with: /\A#([\da-f]{3}){1,2}\z/i }, allow_blank: true
+  
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
 

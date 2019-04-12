@@ -7,6 +7,14 @@ module ApplicationHelper
     end
   end
 
+  def user_bg_color(user)
+    if user.bg_color.present?
+      user.bg_color
+    else
+      "#005a55"
+    end
+  end
+
   def sklonenie(number, one, few, many)
     if number == nil || !number.is_a?(Numeric)
       number = 0

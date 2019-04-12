@@ -2,11 +2,16 @@ source 'https://rubygems.org'
 
 gem 'validates_email_format_of'
 gem 'rails', '4.2.8'
-gem 'sqlite3', '~> 1.3.13'
 gem 'jquery-rails'
+gem 'uglifier'
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   gem 'byebug'
+  gem 'sqlite3', '~> 1.3.13'
 end
 
 group :development do

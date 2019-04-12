@@ -46,6 +46,12 @@
         <div class="form-action">
           <%= f.submit 'Зарегистрироваться', class: 'button button-small button-dark' %>
         </div>
+
+        <div class="form-action">
+          <% if current_user %>
+            <%= link_to 'Удалить пользователя', @user, method: :delete, data: { confirm: "Вы уверены?" } %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

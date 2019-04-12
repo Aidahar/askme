@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :load_user, except:[:index, :new, :create]
-  before_action :authorize_user, except:[:index, :new, :create, :show]
+  before_action :load_user, except:[:index, :new, :create, :destroy]
+  before_action :authorize_user, except:[:index, :new, :create, :show, :destroy]
 
   def index
     @users = User.all
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+  
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
 
   def update

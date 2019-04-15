@@ -1,7 +1,6 @@
 require 'openssl'
 
 class User < ActiveRecord::Base
-
   attr_accessor :password
 
   ITERATIONS = 20000

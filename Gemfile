@@ -5,6 +5,7 @@ gem 'rails', '4.2.8'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'rails_12factor'
+gem 'recaptcha'
 
 group :production do
   gem 'pg', '~>0.21'

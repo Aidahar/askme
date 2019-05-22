@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20190415151905) do
     t.integer  "author_id"
   end
 
+  add_index "questions", ["author_id"], name: "index_questions_on_author_id"
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
@@ -34,7 +37,6 @@ ActiveRecord::Schema.define(version: 20190415151905) do
     t.string   "bg_color"
   end
 
-  add_index "questions", ["author_id"], name: "index_questions_on_author_id"
-  add_index "questions", ["user_id"], name: "index_questions_on_user_id"
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
 end

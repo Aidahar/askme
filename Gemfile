@@ -5,7 +5,8 @@ gem 'rails', '4.2.8'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'rails_12factor'
-gem 'recaptcha', require: 'recaptcha/rails'
+gem 'recaptcha'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :production do
   gem 'pg', '~>0.21'

@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'validates_email_format_of'
-gem 'rails', '4.2.8'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'jquery-rails'
-gem 'uglifier'
+gem 'rails', '4.2.8'
 gem 'rails_12factor'
 gem 'recaptcha'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'validates_email_format_of'
+gem 'uglifier'
 
 group :production do
   gem 'pg', '~>0.21'

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development, :test]
 gem 'jquery-rails'
 gem 'rails', '4.2.8'
 gem 'rails_12factor'

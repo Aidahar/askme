@@ -7,7 +7,7 @@
 Скачайте репозиторий. Запустите bundler
 
 '''
-bundle indtall
+bundle install
 '''
 
 
